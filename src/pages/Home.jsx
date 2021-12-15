@@ -1,7 +1,13 @@
+import { useContext } from 'react'
+import { UserContext } from '../context/userContext'
+
 const Home = () => {
+  const { currentUser } = useContext(UserContext)
   return (
     <div className='container p-5'>
-      <h1 className='display-2 text-light'>Hi, Sign Up or Sign In</h1>
+      <h1 className='display-3 text-light'>
+        {currentUser ? 'Hi buddy' : 'Hi, Sign Up or Sign In'}
+      </h1>
     </div>
   )
 }
